@@ -8,12 +8,24 @@ import { Feed } from "./styled-components";
 import BottomNav from "./bottom-nav";
 
 const Dashboard = () => {
+  const [articles, addArticle] = useState([
+    "jfs",
+    "flasdkjf",
+    "fjalsfj",
+    "fjasdlfjs"
+  ]);
+  useEffect(() => {
+    console.log("scrolled");
+    window.scrollTo(100, 0);
+  });
   return (
     <div>
       <DashContainer>
         <Nav />
         <Feed>
-          <Feeds />
+          {articles.map(x => (
+            <Feeds />
+          ))}
         </Feed>
         <BottomNav />
       </DashContainer>
