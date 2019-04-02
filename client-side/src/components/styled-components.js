@@ -2,6 +2,8 @@ import styled from "styled-components";
 
 const DashContainer = styled.div`
   width: -webkit-fill-available;
+  width: -moz-available;
+  height: -moz-available;
   height: -webkit-fill-available;
 `;
 const Feed = styled.div`
@@ -16,6 +18,8 @@ position: fixed;
 height: 3rem;
 z-index: 1;
 width: -webkit-fill-available;
+width: -moz-available;
+height: -moz-available;
 background: #26aaade0;
 grid-template-columns: repeat(4,1fr););
 
@@ -26,6 +30,7 @@ const Navigation = styled.div`
   height: 3rem;
   z-index: 99;
   width: -webkit-fill-available;
+  width: -moz-available;
   position: fixed;
   background: #26aaade0;
   grid-template-columns: repeat(3, 1fr);

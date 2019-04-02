@@ -3,6 +3,7 @@ import { Modal, Button } from "react-bootstrap";
 
 const Feeds = props => {
   const [show, setShow] = useState(false);
+  const [showComments, viewComment] = useState(false);
 
   //   const handleHide = () => {
   //     setShow(true);
@@ -67,6 +68,38 @@ const Feeds = props => {
             less sleep than they need on an average night, and 80% say they are
             using weekend days to make up for sleep lost during the week.
           </p>
+        </Modal.Body>
+        <Modal.Footer>
+          <div className="iconBackground">
+            <i class="icon far fa-comments" onClick={() => viewComment(true)} />
+          </div>
+          <div className="iconBackground">
+            <i class=" icon fas fa-sync-alt" />
+          </div>
+          <div className="iconBackground">
+            <i class="icon far fa-thumbs-up" />
+          </div>
+          <div className="iconBackground">
+            <i class=" icon fab fa-font-awesome-flag" />
+          </div>
+          {/* <Button variant="secondary">filter</Button>
+          <Button variant="primary"> comment</Button> */}
+        </Modal.Footer>
+      </Modal>
+
+      <Modal
+        show={showComments}
+        onHide={() => viewComment(false)}
+        dialogClassName="modal-90w"
+        aria-labelledby="example-custom-modal-styling-title"
+      >
+        <Modal.Header closeButton>
+          <Modal.Title id="example-custom-modal-styling-title">
+            Custom Modal Styling
+          </Modal.Title>
+        </Modal.Header>
+        <Modal.Body>
+          <input placeholder="add comment" type="text" />
         </Modal.Body>
         <Modal.Footer>
           <div className="iconBackground">
