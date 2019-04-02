@@ -10,6 +10,7 @@ import {
 import BottomNav from "./bottom-nav";
 import Dashboard from "./dashboard";
 import Feeds from "./feed";
+import Chat from "./Chat";
 
 class Main extends Component {
   // constructor(props) {
@@ -22,8 +23,9 @@ class Main extends Component {
         {/* <Nav>
             <BottomNav> */}
         <Switch>
-          <Route exact path="/" component={Dashboard} />
-          <Route exact path="/home" component={Feeds} />
+          <Route exact  path="/" component={Dashboard} />
+          <Route exact  path="/home" component={Feeds} />
+          <Route exact  path="/chat" component={Chat} />
         </Switch>
         {/* </BottomNav>
           </Nav> */}
