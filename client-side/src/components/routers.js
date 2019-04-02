@@ -1,4 +1,5 @@
 import React, { Component } from "react";
+import Nav from "./nav";
 import {
   BrowserRouter as Router,
   Switch,
@@ -6,43 +7,26 @@ import {
   Redirect,
   withRouter
 } from "react-router-dom";
+import BottomNav from "./bottom-nav";
+import Dashboard from "./dashboard";
+import Feeds from "./feed";
 
 class Main extends Component {
   // constructor(props) {
   //   super(props);
   // }
 
-  componentDidMount() {
-    console.log(this.props.form);
-  }
-
   render() {
-    let PrivateRoute = ({ component: Component, ...rest }) => {
-      const isLogged = this.props.login.password;
-      console.log(this.props);
-      console.log(isLogged);
-      const b = true;
-      return (
-        <Route
-          {...rest}
-          render={props =>
-            this.props.login.password || this.props.form.password ? (
-              <Component {...props} />
-            ) : (
-              <Redirect to={{ pathname: "/" }} />
-            )
-          }
-        />
-      );
-    };
-
     return (
       <Router>
+        {/* <Nav>
+            <BottomNav> */}
         <Switch>
-          <AppWrapper>
-            <Route exact path="/" component={component} />
-          </AppWrapper>
+          <Route exact path="/" component={Dashboard} />
+          <Route exact path="/home" component={Feeds} />
         </Switch>
+        {/* </BottomNav>
+          </Nav> */}
       </Router>
     );
   }

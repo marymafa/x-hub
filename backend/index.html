@@ -18,10 +18,10 @@
 
     <div id="output"></div>
     <script>
-      
       var socket = io.connect("http://localhost:3000");
       function call() {
         var input = document.getElementById("input").value;
+
         socket.emit("chat message", {
           input,
           name: "moral" + Math.random() * 1

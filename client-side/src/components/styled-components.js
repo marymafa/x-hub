@@ -2,28 +2,36 @@ import styled from "styled-components";
 
 const DashContainer = styled.div`
   width: -webkit-fill-available;
-  border: 1px solid black;
   height: -webkit-fill-available;
-  background: #f4f3ef;
 `;
 const Feed = styled.div`
-  display: grid;
-  border: 1px solid black;
-  height: 36.6rem;
+  height: 33.6rem;
+  background: #f4f3ef;
+  margin-top: 3rem;
 `;
 
 const BtmNav = styled.div`    
 display: grid;
+position: fixed;
 height: 3rem;
-background:#26aaada8;
-grid-template-columns: repeat(4,1fr);
+z-index: 1;
+width: -webkit-fill-available;
+background: #26aaade0;
+grid-template-columns: repeat(4,1fr););
+
 }`;
 const Navigation = styled.div`
+  margin-top: -3rem;
   display: grid;
   height: 3rem;
-  border: 1px solid black;
-  background: #26aaada8;
+  z-index: 99;
+  width: -webkit-fill-available;
+  position: fixed;
+  background: #26aaade0;
   grid-template-columns: repeat(3, 1fr);
+  -webkit-box-pack: start;
+  -webkit-justify-content: start;
+  -ms-flex-pack: start;
   justify-content: start;
 `;
 const Icons = styled.i`

@@ -69,3 +69,18 @@ btn-success:not(:disabled):not(.disabled).active:focus,
 .dropdown-menu.show {
   background: #5fc1c2;
 }
+.articleImages {
+  width: 10%;
+  height: 10%;
+  margin: auto;
+}
+
+@media (min-width: 576px) {
+  .modal-dialog {
+    max-width: 50rem;
+    margin: 1.75rem auto;
+  }
+}
+/* .modal-title {
+  background: url(https://images.unsplash.com/photo-1553991499-7dc579547f16?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=400&q=60);
+} */
