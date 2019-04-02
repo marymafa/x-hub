@@ -1,25 +1,24 @@
 const formidable = require('formidable');
+var bodyParser = require("body-parser");
+
 var multer = require('multer');
 const upload = multer({
   dest: "/tmp/"
   // you might also want to set some limits: https://github.com/expressjs/multer#limits
 });
+
 var fs = require("fs");
 var path = require("path");
 const articles = (app) => {
+
 
   app.set('view engine', 'html');
   app.get("/", (req, res) => {
     res.send("hello world");
   });
 
-  app.post("/upload", (req, res) => {
-    console.log(req.body);
-
-  })
-
-  app.post("/uploads", upload.single('file'), (req, res) => {
-    console.log("wow", req.file.path)
+  app.post("/upload", upload.single('file'), (req, res) => {
+    console.log('req.file :', req.file);
     var response = {};
     var file = __dirname + '/uploads/' + req.file.originalname;
 
@@ -38,17 +37,9 @@ const articles = (app) => {
             file: __dirname + '/uploads/' + req.file.originalname
           };
         }
-        // fs.createReadStream(path.join(__dirname + '/uploads/', req.file.originalname)).pipe(res);
-        // res.end(JSON.stringify(response));
       })
     })
     console.log(req.file);
-    // let img = fs.readFileSync(__dirname + "/uploads/" + req.file.originalname);
-    // img = new Buffer(img, "binary").toString("base64");
-
-    // res.render(img);
-
-
   });
 
 };
