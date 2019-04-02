@@ -1,3 +1,4 @@
+
 var app = require("express")();
 var http = require("http").Server(app);
 var io = require("socket.io")(http);
@@ -9,6 +10,22 @@ app.use(bodyParser());
 app.use(cors());
 var multer = require("multer"); 
 
+articles(app);
+
+var list = [];
+
+io.on('connection', function(socket){
+  socket.on('chat message', function(msg){
+    list.push(msg);
+    io.emit('chat message',list);
+  });
+});
+
+
+
+http.listen(port, function(){
+  console.log('listening on *:' + 3000);
+=======
 // articles(app);
 
 var list = [];
