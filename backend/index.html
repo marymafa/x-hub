@@ -16,11 +16,23 @@
       function call() {
         var input = document.getElementById("input").value;
 
+
+    <form method="post" enctype="multipart/form-data" action="http://localhost:3000/upload">
+      <input type="file" name="file" />
+      <input type="submit" value="Submit" />
+    </form>
+
+    <div id="output"></div>
+    <script>
+
+      var socket = io.connect("http://localhost:3000");
+      function call() {
+        var input = document.getElementById("input").value;
         socket.emit("chat message", {
           input,
           name: "moral" + Math.random() * 1
         });
-      }
+
       socket.on("chat message", function(msg) {
         console.log(msg);
       });
