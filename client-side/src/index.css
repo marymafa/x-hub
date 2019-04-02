@@ -1,0 +1,29 @@
+body {
+  margin: 0;
+  padding: 0;
+  font-family: sans-serif;
+}
+
+h1{
+  margin-left:26% ; 
+}
+textarea { 
+width: 300px;
+height: 700px;
+padding-left: 60%;
+border-radius: 25px;
+margin-left:20% ;
+box-sizing: border-box;
+background-position: left top;
+background-repeat: repeat;
+ }
+
+ .chat-room{
+  justify-content: center;	
+}
+
+
+
+
+
+
