@@ -9,7 +9,7 @@ const DashContainer = styled.div`
 const Feed = styled.div`
   display: grid;
   border: 1px solid black;
-  height: 33.5em;
+  height: 36.6rem;
 `;
 
 const BtmNav = styled.div`    
@@ -18,7 +18,7 @@ height: 3rem;
 background:#26aaada8;
 grid-template-columns: repeat(4,1fr);
 }`;
-const Nav = styled.div`
+const Navigation = styled.div`
   display: grid;
   height: 3rem;
   border: 1px solid black;
@@ -37,4 +37,4 @@ const Input = styled.input`
 // yellow fe9b3a
 //grey : f4f3ef
 
-export { DashContainer, Feed, BtmNav, Nav, Icons, Input };
+export { DashContainer, Feed, BtmNav, Navigation, Icons, Input };
