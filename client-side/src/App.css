@@ -22,3 +22,20 @@
   from { transform: rotate(0deg); }
   to { transform: rotate(360deg); }
 }
+.select-comp{
+  color: white;
+  background-color:  rgb(28, 223, 158);;
+  border: 3px solid;
+  border-color: rgb(12, 241, 165);
+  border-radius: 3px;
+  font-size: 40px;
+  text-align: center;
+  border: 1px solid #ccc;
+  /* height: 50px; */
+  width: 50%;
+  margin-top:20%;
+  margin-bottom:10%;
+  position: relative;
+  display: block;
+  -webkit-appearance: none
+}
