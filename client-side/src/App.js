@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 import logo from "./logo.svg";
-import Dashboard from "./dashboard";
+import Dashboard from "./components/dashboard";
 import "./App.css";
 
 class App extends Component {
