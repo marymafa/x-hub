@@ -2,18 +2,31 @@ import React, { Component } from "react";
 import "../App.css";
 
 
+
 class Upload extends Component {
+    constructor(){
+        super()
+        this.state={
+            file:""
+        }
+        this.handleImgInput = this.handleImgInput.bind(this);
+    }
+    handleImgInput(event){
+        this.setState({
+            file: URL.createObjectUrl(event.target.files[0])
+        })
+    }
     render() {
+        console.log("img", this.state.file)
         return <div>
             <center>
-                <select className="select-comp">
-                <option value="Upload">Upload</option>
-                <option value="Article">Article</option>
-                <option value="Photo">Photo</option>
-                <option value="Video">Video</option>
-            </select>
+            <form>
+                <input onClick={this.handleImgInput} className="select-comp" type="file" accept="image/*"></input>
+            </form>
+                {this.state.file.length>0?<img src={this.state.file}/>:""}
+                
             </center>
-            
+
         </div>;
     }
 }

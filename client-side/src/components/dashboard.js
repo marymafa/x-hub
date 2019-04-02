@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from "react";
+import Upload from "./upload";
 
 const Dashboard = () => {
   const [count, setCount] = useState(0);
