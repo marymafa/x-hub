@@ -3,3 +3,69 @@ body {
   padding: 0;
   font-family: sans-serif;
 }
+i {
+  font-size: 2rem;
+  margin: auto;
+  color: white;
+}
+.icon {
+  font-size: 1rem;
+  margin: auto;
+  /* color: #f48138; */
+  padding: 1em;
+}
+.iconBackground {
+  background: #f69138;
+  width: 3rem;
+  border-radius: 25%;
+  height: 3rem;
+}
+img {
+  width: 5rem;
+  height: 2rem;
+  margin: auto;
+}
+.bar {
+  margin-left: 1rem;
+}
+.btn-success {
+  background: none;
+  border: 0;
+}
+.btn-success:not(:disabled):not(.disabled).active,
+.btn-success:not(:disabled):not(.disabled):active,
+.show > .btn-success.dropdown-toggle {
+  background: none;
+  border: none;
+  color: #fff;
+  background-color: none;
+  border-color: none;
+}
+.btn-success:hover {
+  color: #fff;
+  background-color: transparent;
+  border-color: none;
+  border: none;
+}
+.btn:hover {
+  color: #fff;
+  background-color: none;
+  border-color: none;
+  border: none;
+}
+btn-success:not(:disabled):not(.disabled).active:focus,
+.btn-success:not(:disabled):not(.disabled):active:focus,
+.show > .btn-success.dropdown-toggle:focus {
+  box-shadow: none;
+  border: none;
+}
+btn-success:not(:disabled):not(.disabled).active:focus,
+.btn-success:not(:disabled):not(.disabled):active:focus,
+.show > .btn-success.dropdown-toggle {
+  box-shadow: none;
+  background: none;
+  border: none;
+}
+.dropdown-menu.show {
+  background: #5fc1c2;
+}
