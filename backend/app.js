@@ -1,4 +1,3 @@
-
 var app = require("express")();
 var http = require("http").Server(app);
 var io = require("socket.io")(http);
@@ -9,23 +8,6 @@ var cors = require("cors");
 app.use(bodyParser());
 app.use(cors());
 var multer = require("multer"); 
-
-articles(app);
-
-var list = [];
-
-io.on('connection', function(socket){
-  socket.on('chat message', function(msg){
-    list.push(msg);
-    io.emit('chat message',list);
-  });
-});
-
-
-
-http.listen(port, function(){
-  console.log('listening on *:' + 3000);
-=======
 // articles(app);
 
 var list = [];
@@ -34,7 +16,9 @@ var upload = multer({ dest: '/tmp/'});
 
 io.on("connection", function(socket) {
   socket.on("chat message", function(msg) {
+    console.log(msg);
     list.push(msg);
+    console.log(list)
     io.emit("chat message", list);
   });
 });
