@@ -1,37 +1,23 @@
-const express = require('express');
-const app = express();
-const port = 3000;
-const path = require("path");
-var http = require('http').Server(app);
-var io = require('socket.io')(http);
-let cors = require("cors");
-var bodyParser = require('body-parser')
-
-var server = require('http').createServer(app)
-var io = require('socket.io')(server);
 app.use(bodyParser());
 app.use(cors());
+var app = require('express')();
+var http = require('http').Server(app);
+var io = require('socket.io')(http);
+var port = process.env.PORT || 3000;
 
+var list = [];
 
-io.on('connection', function(client) {
-    console.log('Client connected...');
-    
-    client.on('join', function(data) {
-    	console.log(data);
-    });
-    
-    client.on('messages', function(data) {
-           client.emit('broad', data);
-           client.broadcast.emit('broad',data);
-    });
-  
+io.on('connection', function(socket){
+  socket.on('chat message', function(msg){
+    list.push(msg);
+    io.emit('chat message',list);
+  });
 });
 
+app.get("/" , (req ,res) => {
+    res.send("hello")
+})
 
-server.listen(port, () => {
-    console.log(`Server started on port ${server.address().port} :)`);
+http.listen(port, function(){
+  console.log('listening on *:' + 3000);
 });
-
-
-
-
