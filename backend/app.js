@@ -43,6 +43,20 @@ app.get("/users", async (req, res) => {
     res.send(allUsers.rows).status(200).end();
 })
 
+app.post("/send/message", async (req, res) => {
+    var senderInfo = await client.query(`SELECT * FROM users WHERE name=$1;`, [req.body.senderName]);
+    var receiverInfo = await client.query(`SELECT * FROM users WHERE name=$1;`, [req.body.receiverName]);
+    var allUsers = await client.query(`INSERT INTO charts(messages, sender_id, receiver_id) VALUES ($1, $2, $3);`, [req.body.message, senderInfo.rows[0].id, receiverInfo.rows[0].id]);
+    res.status(201).end();
+})
+app.get("/get/messages/:senderName/:receiverName", async (req, res) => {
+    var senderInfo = await client.query(`SELECT * FROM users WHERE name=$1;`, [req.params.senderName]);
+    var receiverInfo = await client.query(`SELECT * FROM users WHERE name=$1;`, [req.params.receiverName]);
+    var messagesFromSender = await client.query(`SELECT * FROM charts where sender_id = $1 and receiver_id= $2;`, [senderInfo.rows[0].id, receiverInfo.rows[0].id]);
+    console.log('messagesFromSender :', messagesFromSender);
+
+})
+
 app.post("/article/like", async (req, res) => {
     var userInfor = await client.query(`SELECT * FROM public.users WHERE name=$1;`, [req.body.user]);
     var articleInfo = await client.query(`SELECT * FROM public.articles where title=$1;`, [req.body.title]);
@@ -82,6 +96,9 @@ app.get("/video/comments/:title", (req, res) => {
     res.json({ title: "req.params", comments: [{ text: "I love this video", date: "2019-04-02" }, { text: "ohhhh amazing stuff guys", date: "2019-01-04" }, { text: "Amazing", date: "2019-02-22" }] }).status(200).end();
 });
 app.get("/", express.static(path.join(__dirname, "./public")));
+
+
+
 var list = [];
 io.on('connection', function (socket) {
     socket.on('chat message', function (msg) {
