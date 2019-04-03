@@ -2,11 +2,14 @@ import styled from "styled-components";
 
 const DashContainer = styled.div`
   width: -webkit-fill-available;
+  width: -moz-available;
+  height: -moz-available;
   height: -webkit-fill-available;
 `;
 const Feed = styled.div`
   height: 33.6rem;
   background: #f4f3ef;
+  max-width:100%
   margin-top: 3rem;
 `;
 
@@ -16,8 +19,11 @@ position: fixed;
 height: 3rem;
 z-index: 1;
 width: -webkit-fill-available;
+width: -moz-available;
+height: -moz-available;
 background: #26aaade0;
 grid-template-columns: repeat(4,1fr););
+bottom:0;
 
 }`;
 const Navigation = styled.div`
@@ -26,6 +32,7 @@ const Navigation = styled.div`
   height: 3rem;
   z-index: 99;
   width: -webkit-fill-available;
+  width: -moz-available;
   position: fixed;
   background: #26aaade0;
   grid-template-columns: repeat(3, 1fr);
@@ -40,9 +47,5 @@ const Icons = styled.i`
 const Input = styled.input`
   margin: auto;
 `;
-//colors
-//green: 26aaad
-// yellow fe9b3a
-//grey : f4f3ef
 
 export { DashContainer, Feed, BtmNav, Navigation, Icons, Input };

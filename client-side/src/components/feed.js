@@ -1,9 +1,20 @@
 import React, { useState, useEffect } from "react";
 import { Modal, Button } from "react-bootstrap";
+import Axios from "axios";
 
 const Feeds = props => {
   const [show, setShow] = useState(false);
+  const [showComments, viewComment] = useState(false);
 
+  useEffect(() => {
+    Axios.get("localhost:3001/article/likes/")
+      .then(function(response) {
+        console.log(response);
+      })
+      .catch(function(error) {
+        console.log(error);
+      });
+  });
   //   const handleHide = () => {
   //     setShow(true);
   //   };
@@ -70,7 +81,42 @@ const Feeds = props => {
         </Modal.Body>
         <Modal.Footer>
           <div className="iconBackground">
-            <i class="icon far fa-comments" />
+            <i class="icon far fa-comments" onClick={() => viewComment(true)} />
+          </div>
+          <div className="iconBackground">
+            <i class=" icon fas fa-sync-alt" />
+          </div>
+          <div className="iconBackground">
+            <i class="icon far fa-thumbs-up" />
+          </div>
+          <div className="iconBackground">
+            <i class=" icon fab fa-font-awesome-flag" />
+          </div>
+          <div className="iconBackground">
+            <i class="icon far fa-book" />
+          </div>
+          {/* <Button variant="secondary">filter</Button>
+          <Button variant="primary"> comment</Button> */}
+        </Modal.Footer>
+      </Modal>
+
+      <Modal
+        show={showComments}
+        onHide={() => viewComment(false)}
+        dialogClassName="modal-90w"
+        aria-labelledby="example-custom-modal-styling-title"
+      >
+        <Modal.Header closeButton>
+          <Modal.Title id="example-custom-modal-styling-title">
+            Custom Modal Styling
+          </Modal.Title>
+        </Modal.Header>
+        <Modal.Body>
+          <input placeholder="add comment" type="text" />
+        </Modal.Body>
+        <Modal.Footer>
+          <div className="iconBackground">
+            <i class="icon far fa-comments" onClick={() => viewComment(true)} />
           </div>
           <div className="iconBackground">
             <i class=" icon fas fa-sync-alt" />

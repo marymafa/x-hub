@@ -1,36 +1,56 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
-    <title>Document</title>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/2.2.0/socket.io.dev.js"></script>
-  </head>
-  <body>
-    <input id="input" type="text" />
-    <button onclick="call()">chat</button>
 
-    <form method="post" enctype="multipart/form-data" action="/upload">
-      <input type="file" name="file" />
-      <input type="submit" value="Submit" />
-    </form>
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+  <title>Document</title>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/2.2.0/socket.io.dev.js"></script>
+</head>
 
-    <div id="output"></div>
-    <script>
-      var socket = io.connect("http://localhost:3000");
-      function call() {
-        var input = document.getElementById("input").value;
+<body>
+  <input id="input" type="text" />
+  <button onclick="call()">chat</button>
 
-        socket.emit("chat message", {
-          input,
-          name: "moral" + Math.random() * 1
-        });
-      }
+  <form method="post" enctype="multipart/form-data" action="/upload">
+    <input type="file" name="file" />
+    <input type="submit" value="Submit" />
+  </form>
+  <button onclick="submit()">test</button>
 
-      socket.on("chat message", function(msg) {
-        console.log(msg);
+  <script>
+    function submit() {
+      fetch('http://localhost:3000/videos', {
+        method: 'post',
+        body: JSON.stringify({ user: 'Mercy', title: "osep1" }),
+        headers: { 'Content-type': 'application/json' }
+      }).then(function (response) {
+        return response.json();
+      }).then(function (myJson) {
+        console.log(JSON.stringify(myJson));
       });
-    </script>
-  </body>
+    }
+    function encodeImageFileAsURL(element) {
+      var file = element.files[0];
+      var reader = new FileReader();
+      reader.onloadend = function (e) {
+        console.log('RESULT', e.target.result)
+        document.getElementById("blah").src = e.target.result;
+        submit(e.target.result);
+      }
+      reader.readAsDataURL(file);
+    }
+
+    socket.emit("chat message", {
+      input,
+      name: "moral" + Math.random() * 1
+    });
+
+    socket.on("chat message", function (msg) {
+      console.log(msg);
+    });
+  </script>
+</body>
+
 </html>
