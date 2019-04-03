@@ -8,7 +8,9 @@ const BottomNav = () => {
     <React.Fragment>
       <BtmNav>
 
-        <i class="far fa-comment" />
+       <Link style={{paddingTop:"0.5rem"}} to="/chat">
+          <i class="far fa-comment" />
+        </Link>
         <i class="fas fa-upload" />
         <i class="fas fa-bell" />
         <i class="far fa-question-circle" />
