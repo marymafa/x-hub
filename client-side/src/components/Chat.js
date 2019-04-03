@@ -15,23 +15,18 @@ const Chat = () => {
   const [chats, addChats] = useState([{ input: "" }]);
   const [input, addInput] = useState("");
   function call() {
-    const name = "user";
-
     socket.emit("chat message", { input });
-    getFeed();
   }
+
   const socket = openSocket("http://localhost:3000");
 
   useEffect(() => {
-    getFeed();
   });
 
-  function getFeed() {
     socket.on("chat message", function(msg) {
       addChats(msg);
       return msg;
     });
-  }
 
   return (
     <div>
