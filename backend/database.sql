@@ -3,7 +3,8 @@ CREATE TABLE IF NOT EXISTS users(
     name varchar(255) NOT NULL ,
     created_at timestamp NOT NULL DEFAULT NOW() NOT NULL,
     updated_at timestamp NOT NULL DEFAULT NOW() NOT NULL
-);    
+);
+
 CREATE TABLE IF NOT EXISTS chats(
     id serial PRIMARY KEY,
     messages varchar(225) NOT NULL,
@@ -90,7 +91,8 @@ CREATE TABLE IF NOT EXISTS tagged_video(
 );
 
 
-
+INSERT INTO users(name) VALUES ('moral');
+INSERT INTO users(name) VALUES ('tata');
 
 
 

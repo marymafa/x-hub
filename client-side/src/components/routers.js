@@ -12,6 +12,7 @@ import Dashboard from "./dashboard";
 import Feeds from "./feed";
 import Chat from "./Chat";
 import ShareContent from "./share-content";
+import ChatLog from "./ChatLog";
 
 class Main extends Component {
   constructor(props) {
@@ -28,7 +29,8 @@ class Main extends Component {
           <Route exact path="/home" component={Feeds} />
           <Route exact path="/chat" component={Chat} />
           {/* <Router exact path="/content" component={ShareContent} /> */}
-        </Switch>
+          <Route exact path="/chatlog" component={ChatLog} />
+          </Switch>
         {/* </BottomNav>
           </Nav> */}
       </Router>
