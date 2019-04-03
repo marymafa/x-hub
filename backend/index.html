@@ -1,26 +1,22 @@
 <!DOCTYPE html>
 <html lang="en">
-
-<head>
+  <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta http-equiv="X-UA-Compatible" content="ie=edge" />
     <title>Document</title>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/2.2.0/socket.io.dev.js"></script>
-</head>
-
-<body>
+  </head>
+  <body>
     <input id="input" type="text" />
     <button onclick="call()">chat</button>
-    <div id="output"></div>
 
-    <form action="http://localhost:3000/upload" enctype="multipart/form-data" method="POST">
-        <input type="file" onchange="encodeImageFileAsURL(this)" />
-        <input type="submit">
+    <form method="post" enctype="multipart/form-data" action="/upload">
+      <input type="file" name="file" />
+      <input type="submit" value="Submit" />
     </form>
-    <button onclick="submit()">submit</button>
-    <img scr="#" style='display:block; width:100px;height:100px;' id='blah' />
 
+    <div id="output"></div>
     <script>
         function submit() {
             fetch('http://localhost:3000/article/comment', {
@@ -44,19 +40,15 @@
             reader.readAsDataURL(file);
         }
 
-        var socket = io.connect("http://localhost:3000");
-        function call() {
-            var input = document.getElementById("input").value;
-
-            socket.emit("chat message", {
-                input,
-                name: "moral" + Math.random() * 1
-            });
-        }
-        socket.on("chat message", function (msg) {
-            console.log(msg);
+        socket.emit("chat message", {
+          input,
+          name: "moral" + Math.random() * 1
         });
-    </script>
-</body>
+      }
 
+      socket.on("chat message", function(msg) {
+        console.log(msg);
+      });
+    </script>
+  </body>
 </html>
