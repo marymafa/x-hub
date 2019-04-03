@@ -23,10 +23,8 @@
 
     <script>
         function submit(ImageUrl) {
-            fetch('http://localhost:3000/upload', {
-                method: 'post',
-                body: ImageUrl,
-                headers: { 'Content-type': 'application/json' }
+            fetch('http://localhost:3000/comments/Osep', {
+                method: 'get',
             }).then(function (response) {
                 return response.json();
             }).then(function (myJson) {
