@@ -13,7 +13,7 @@ const Nav = () => {
           <Dropdown.Menu>
             <Dropdown.Item href="#/action-1">Preferences</Dropdown.Item>
             <Dropdown.Item href="#/action-2">Filters</Dropdown.Item>
-            <Dropdown.Item href="#/action-3">Statistics</Dropdown.Item>
+            <Dropdown.Item href="#/action-3">Statistic</Dropdown.Item>
           </Dropdown.Menu>
         </Dropdown>
         <img src="https://upload.wikimedia.org/wikipedia/en/thumb/8/80/First_National_Bank_Logo.svg/1200px-First_National_Bank_Logo.svg.png" />
