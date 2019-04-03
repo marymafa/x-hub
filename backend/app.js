@@ -31,7 +31,7 @@ app.post("/video/like", (req, res) => {
 const pool = new Pool({
     connectionString: connectionString,
 })
-})
+
 const client = new Client({
     connectionString: connectionString,
 })

@@ -7,6 +7,7 @@ const Feeds = props => {
   const [show, setShow] = useState(false);
   const [showComments, viewComment] = useState(false);
   const [showSearch, search] = useState(false);
+  
 
   useEffect(() => {
     Axios.get("localhost:3001/article/likes/")
@@ -125,9 +126,7 @@ const Feeds = props => {
           {/* <Button variant="secondary">filter</Button>
           <Button variant="primary"> comment</Button> */}
         </Modal.Footer>
-
       </Modal>
-
       <Modal
         show={showBookmarks}
         onHide={() => alertBookmarks(false)}
