@@ -18,7 +18,7 @@ const Nav = () => {
 
           </Dropdown.Menu>
         </Dropdown>
-        <img src="https://upload.wikimedia.org/wikipedia/en/thumb/8/80/First_National_Bank_Logo.svg/1200px-First_National_Bank_Logo.svg.png" />
+        <img src="/X.png" />
         <Input placeholder="search" />
       </Navigation>
     </React.Fragment>

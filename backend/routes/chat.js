@@ -11,5 +11,9 @@ const chats = (app, client) => {
         var messagesFromSender = await client.query(`SELECT * FROM chats where sender_id = $1 and receiver_id= $2;`, [senderInfo.rows[0].id, receiverInfo.rows[0].id]);
         console.log('messagesFromSender :', messagesFromSender);
     })
+    app.get("/findUser/:name", async (req, res) => {
+        var senderInfo = await client.query(`SELECT * FROM users WHERE name=$1;`, [req.params.name]);
+        res.send(senderInfo.rows[0]);
+    })
 };
 module.exports = { chats };

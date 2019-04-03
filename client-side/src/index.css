@@ -74,6 +74,12 @@ btn-success:not(:disabled):not(.disabled).active:focus,
   height: 10%;
   margin: auto;
 }
+/* .fb_iframe_widget_fluid_desktop,
+.fb_iframe_widget_fluid_desktop span,
+.fb_iframe_widget_fluid_desktop iframe {
+  max-width: 60%;
+  margin-left: -6.5em;
+} */
 
 @media (min-width: 576px) {
   .modal-dialog {

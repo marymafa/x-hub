@@ -8,8 +8,7 @@ const Feeds = props => {
   const [showBookmarks, alertBookmarks] = useState(false);
 
   useEffect(() => {
-    Axios
-      .get("localhost:3001/article/likes/")
+    Axios.get("localhost:3001/article/likes/")
       .then(function(response) {
         console.log(response);
       })
@@ -109,7 +108,7 @@ const Feeds = props => {
         </Modal.Body>
         <Modal.Footer>
           <div className="iconBackground">
-            <i class="icon far fa-comments" />
+            <i class="icon far fa-comments" onClick={() => viewComment(true)} />
           </div>
           <div className="iconBackground">
             <i class=" icon fas fa-sync-alt" />

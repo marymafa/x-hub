@@ -21,7 +21,6 @@
 
   <script>
     function submit() {
-      console.log('object :');
       fetch('http://localhost:3000/videos', {
         method: 'post',
         body: JSON.stringify({ user: 'Mercy', title: "osep1" }),
