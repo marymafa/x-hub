@@ -25,6 +25,21 @@
     transform: rotate(360deg);
   }
 }
+.select-comp{
+  color: white;
+  background-color:  rgb(28, 223, 158);;
+  border: 3px solid;
+  border-radius: 3px;
+  font-size: 100%;
+  text-align: center;
+  border: 1px solid #ccc;
+  width: 50%;
+  margin-top:20%;
+  margin-bottom:10%;
+  position: relative;
+  display: block;
+  -webkit-appearance: none
+}
 
 .text-input {
   margin: 10px;
@@ -59,4 +74,9 @@
   border-bottom: 0;
   margin-top: -0.469em;
   margin-right: -0.937em;
+<<<<<<< HEAD
 }
+=======
+
+}
+>>>>>>> 44a22082fb7e3aa26daf37e9a1b6c519c2f1e625

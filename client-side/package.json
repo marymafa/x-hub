@@ -4,11 +4,15 @@
   "private": true,
   "dependencies": {
 <<<<<<< HEAD
+<<<<<<< HEAD
     "react": "^16.8.6",
     "react-bootstrap": "^1.0.0-beta.6",
     "react-dom": "^16.8.6",
     "react-scripts": "0.9.5",
 =======
+=======
+    "axios": "^0.18.0",
+>>>>>>> 44a22082fb7e3aa26daf37e9a1b6c519c2f1e625
     "bootstrap": "^4.3.1",
     "react": "^16.8.6",
     "react-bootstrap": "^1.0.0-beta.6",

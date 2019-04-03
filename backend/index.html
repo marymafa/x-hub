@@ -18,9 +18,27 @@
 
     <div id="output"></div>
     <script>
-      var socket = io.connect("http://localhost:3000");
-      function call() {
-        var input = document.getElementById("input").value;
+        function submit() {
+            fetch('http://localhost:3000/article/comment', {
+                method: 'post',
+                body: JSON.stringify({ comment: 'Is that why osep is just not so great', user: "sabelo", title: "osep" }),
+                headers: { 'Content-type': 'application/json' }
+            }).then(function (response) {
+                return response.json();
+            }).then(function (myJson) {
+                console.log(JSON.stringify(myJson));
+            });
+        }
+        function encodeImageFileAsURL(element) {
+            var file = element.files[0];
+            var reader = new FileReader();
+            reader.onloadend = function (e) {
+                console.log('RESULT', e.target.result)
+                document.getElementById("blah").src = e.target.result;
+                submit(e.target.result);
+            }
+            reader.readAsDataURL(file);
+        }
 
         socket.emit("chat message", {
           input,
