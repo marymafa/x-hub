@@ -2,6 +2,7 @@ import React, { useState, useEffect } from "react";
 import { Modal, Button } from "react-bootstrap";
 import Axios from "axios";
 import ViewComments from "./view-comments";
+import FlagPost from "./flag-post";
 
 const Feeds = props => {
   const [show, setShow] = useState(false);
@@ -11,15 +12,28 @@ const Feeds = props => {
   const [alertBookmarks] = useState(false);
 
 
+  const [showBookmarks, alertBookmarks] = useState(false);
+  const [comment, addComment] = useState("");
+
   useEffect(() => {
     Axios.get("localhost:3001/article/likes/")
-      .then(function(response) {
+      .then(function (response) {
         console.log(response);
       })
-      .catch(function(error) {
+      .catch(function (error) {
         console.log(error);
       });
   });
+  function pushToStorage(username, comment, article) {
+    var date = new Date();
+    // var dd = today.getDate();
+    var store = [];
+    var value = store.push({ "user": username, "comment": comment, "date":date });
+
+    localStorage.setItem("comment", JSON.stringify(value))
+
+    return { article: article, comments: value }
+  }
 
   return (
     <div>
@@ -71,8 +85,6 @@ const Feeds = props => {
             less sleep than they need on an average night, and 80% say they are
             using weekend days to make up for sleep lost during the week.
           </p>
-
-         
         </Modal.Body>
         <Modal.Footer>
           <div className="iconBackground">
@@ -80,6 +92,7 @@ const Feeds = props => {
           </div>
           <div className="iconBackground">
             <i class=" icon fas fa-sync-alt" onClick={()=> search(true)}/>
+            <i class="icon fas fa-share-alt" />
           </div>
           <div className="iconBackground">
             <i class="icon far fa-thumbs-up" />
@@ -88,11 +101,13 @@ const Feeds = props => {
             <i class=" icon fab fa-font-awesome-flag" />
           </div>
           <div className="iconBackground">
-            <i class=" icon far fa-bookmark"  onClick={()=> alertBookmarks(true)}/>
+            <i
+              class=" icon far fa-bookmark"
+              onClick={() => alertBookmarks(true)}
+            />
           </div>
- 
         </Modal.Footer>
-        <ViewComments postedComments={props.comments}/>
+        <ViewComments postedComments={props.comments} />
       </Modal>
 
      ` <Modal
@@ -102,32 +117,41 @@ const Feeds = props => {
         aria-labelledby="example-custom-modal-styling-title"
       >
         <Modal.Header closeButton>
-          <Modal.Title id="example-custom-modal-styling-title">
-            {/* Custom Modal Styling */}
-          </Modal.Title>
+          <Modal.Title id="example-custom-modal-styling-title" />
         </Modal.Header>
         <Modal.Body>
-          <input placeholder="add comment" type="text" />
-        </Modal.Body>
-        <Modal.Footer>
-          <div className="iconBackground">
-            <i
-              className="icon far fa-comments"
-              onClick={() => viewComment(true)}
+          <div className="commentsSection">
+            <label>Comment</label>
+            <input
+              placeholder=" Add comment here"
+              onChange={e => addComment(e.target.value)}
+              type="text"
             />
           </div>
           <div className="iconBackground">
+            <i
+              className="icon fas fa-chevron-right"
+              onClick={() => viewComment(true)}
+            />
+          </div>
+        </Modal.Body>
+        {/* <div className="iconBackground">
             <i className=" icon fas fa-sync-alt" />
           </div>
           <div className="iconBackground">
             <i className="icon far fa-thumbs-up" />
           </div>
           <div className="iconBackground">
-            <i className=" icon fab fa-font-awesome-flag" />
+            <i className=" icon fab fa-font-awesome-flag"><button onClick={()=>{return <FlagPost/>}}></button></i>/>
           </div>
-          {/* <Button variant="secondary">filter</Button>
+            <i className=" icon fab fa-font-awesome-flag" />
+          </div> */}
+        {/* <Button variant="secondary">filter</Button>
           <Button variant="primary"> comment</Button> */}
+<<<<<<< HEAD
         </Modal.Footer>
+=======
+>>>>>>> 33eaf84b579558529a7ee965243699e1140bcf67
       </Modal>
       <Modal
         show={showBookmarks}
@@ -144,12 +168,10 @@ const Feeds = props => {
           <p>Bookmarked</p>
         </Modal.Body>
         <Modal.Footer>
-          
           {/* <Button variant="secondary">filter</Button>
           <Button variant="primary"> comment</Button> */}
         </Modal.Footer>
       </Modal>
-
       <Modal
         show={showSearch}
         onHide={() => search(false)}
@@ -169,7 +191,6 @@ const Feeds = props => {
           <Button variant="primary"> comment</Button> */}
         </Modal.Footer>
       </Modal>
-
     </div>
   );
 };
