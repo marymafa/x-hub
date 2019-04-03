@@ -7,7 +7,7 @@ const BottomNav = () => {
   return (
     <React.Fragment>
       <BtmNav>
-      {/* <li>
+        {/* <li>
             <a href="">
               <Link to="/registerbusiness">Register business</Link>
             </a>

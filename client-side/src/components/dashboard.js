@@ -9,10 +9,34 @@ import BottomNav from "./bottom-nav";
 
 const Dashboard = () => {
   const [articles, addArticle] = useState([
-    {article:"jfs",comments:[{user:"mark", comment:"Great article"},{user:"johannes", comment:"I like this article"}]},
-    {article:"flasdkjf",comments:[{user:"sabelo", comment:"Great article"},{user:"mary", comment:"I like this article"}]},
-    {article:"fjalsfj",comments:[{user:"cindy", comment:"Great article"},{user:"moral", comment:"I like this article"}]},
-    {article:"fjasdlfjs",comments:[{user:"vuyisile", comment:"Great article"},{user:"thisIsUs", comment:"I like this article"}]},
+    {
+      article: "jfs",
+      comments: [
+        { user: "mark", comment: "Great article" },
+        { user: "johannes", comment: "I like this article" }
+      ]
+    },
+    {
+      article: "flasdkjf",
+      comments: [
+        { user: "sabelo", comment: "Great article" },
+        { user: "mary", comment: "I like this article" }
+      ]
+    },
+    {
+      article: "fjalsfj",
+      comments: [
+        { user: "cindy", comment: "Great article" },
+        { user: "moral", comment: "I like this article" }
+      ]
+    },
+    {
+      article: "fjasdlfjs",
+      comments: [
+        { user: "vuyisile", comment: "Great article" },
+        { user: "thisIsUs", comment: "I like this article" }
+      ]
+    }
   ]);
   const [videos, addVideo] = useState([
     "https://www.facebook.com/codefest.eu/videos/1986525778043373/",
