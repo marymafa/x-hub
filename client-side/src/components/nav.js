@@ -14,9 +14,11 @@ const Nav = () => {
             <Dropdown.Item href="#/action-1">Preferences</Dropdown.Item>
             <Dropdown.Item href="#/action-2">Filters</Dropdown.Item>
             <Dropdown.Item href="#/action-3">Statistics</Dropdown.Item>
+            <Dropdown.Item href="">Bookmarks</Dropdown.Item>
+
           </Dropdown.Menu>
         </Dropdown>
-        <img src="https://upload.wikimedia.org/wikipedia/en/thumb/8/80/First_National_Bank_Logo.svg/1200px-First_National_Bank_Logo.svg.png" />
+        <img src="https://github.com/moralss/x-hub/blob/master/client-side/src/components/X.png?raw=true" />
         <Input placeholder="search" />
       </Navigation>
     </React.Fragment>

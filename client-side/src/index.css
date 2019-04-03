@@ -74,6 +74,12 @@ btn-success:not(:disabled):not(.disabled).active:focus,
   height: 10%;
   margin: auto;
 }
+/* .fb_iframe_widget_fluid_desktop,
+.fb_iframe_widget_fluid_desktop span,
+.fb_iframe_widget_fluid_desktop iframe {
+  max-width: 60%;
+  margin-left: -6.5em;
+} */
 
 @media (min-width: 576px) {
   .modal-dialog {
@@ -81,6 +87,12 @@ btn-success:not(:disabled):not(.disabled).active:focus,
     margin: 1.75rem auto;
   }
 }
-/* .modal-title {
-  background: url(https://images.unsplash.com/photo-1553991499-7dc579547f16?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=400&q=60);
-} */
+.modal-header {
+}
+
+.imgs {
+  background: url(https://source.unsplash.com/collection/190727/1600x900);
+  background-repeat: no-repeat;
+  height: 9rem;
+  color: white;
+}

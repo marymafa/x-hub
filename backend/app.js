@@ -27,6 +27,7 @@ app.post("/article/like", (req, res) => {
 })
 app.post("/video/like", (req, res) => {
     res.send("like successfull!").status(200).end();
+})
 const pool = new Pool({
     connectionString: connectionString,
 })
