@@ -3,10 +3,20 @@
   "version": "0.1.0",
   "private": true,
   "dependencies": {
+<<<<<<< HEAD
     "react": "^16.8.6",
     "react-bootstrap": "^1.0.0-beta.6",
     "react-dom": "^16.8.6",
     "react-scripts": "0.9.5",
+=======
+    "bootstrap": "^4.3.1",
+    "react": "^16.8.6",
+    "react-bootstrap": "^1.0.0-beta.6",
+    "react-dom": "^16.8.6",
+    "react-router-dom": "^5.0.0",
+    "react-scripts": "0.9.5",
+    "socket.io-client": "^2.2.0",
+>>>>>>> 4e2f55b72c7607bc72c11e2a4c7261d61e96776d
     "styled-components": "^4.2.0"
   },
   "devDependencies": {},

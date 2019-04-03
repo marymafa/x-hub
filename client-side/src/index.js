@@ -2,9 +2,10 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import App from './App';
 import './index.css';
-import Board from "./components/board"
+import makeMainRoutes from "./routes/index";
 
 ReactDOM.render(
-  <Board />,
+  <App />,
   document.getElementById('root')
 );
+

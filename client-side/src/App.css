@@ -6,59 +6,57 @@
   animation: App-logo-spin infinite 20s linear;
   height: 80px;
 }
-.chatView{
-  /* border:0.5rem solid #01aaad; */
-  text-align: left;   
-  font-size:50px;
-  padding:4%;
-
-}
-p{
-  font-size: 50px;
-  text-align: left;
-}
 .App-header {
   background-color: #222;
   height: 150px;
   padding: 20px;
   color: white;
 }
-.search{
-text-align: left;
-padding:1em;
-margin-top: 1em;
-border-radius:1em;
-width: 400px;
-
-/* grid-template-columns:  1fr 3fr; */
-}
-.mainChat{
-box-sizing: border-box;
-height: 1000px;
-background-position: left top;
-background-repeat: repeat;
-  display: grid;
-  text-align: center;
-  /* border:0.5rem solid #01aaad; */
-    grid-template-columns:1fr 3fr;
-    grid-template-rows: minmax(100%,1fr);
-}
-.chats{
-  text-align: left;
-    /* font-size:3rem;  */
-}
 
 .App-intro {
   font-size: large;
 }
-li{
-  font-size:2rem;
-  /* border:1rem solid black; */
-  width:3rem;
-}
 
 @keyframes App-logo-spin {
-  from { transform: rotate(0deg); }
-  to { transform: rotate(360deg); }
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
 }
 
+.text-input {
+  margin: 10px;
+  margin-top: 60px;
+}
+
+.button-submit {
+  margin: 1px;
+}
+
+.speech-bubble {
+  position: relative;
+  background: #01aaad;
+  border-radius: .4em;
+  width: 18rem;
+  font-size: 2rem;
+  margin: auto;
+  padding-bottom: 10px;
+  margin-top: 20px;
+}
+
+.speech-bubble:after {
+  content: '';
+  position: absolute;
+  right: 0;
+  top: 50%;
+  width: 0;
+  height: 0;
+  border: 0.938em solid transparent;
+  border-left-color: #01aaad;
+  border-right: 0;
+  border-bottom: 0;
+  margin-top: -0.469em;
+  margin-right: -0.937em;
+}
