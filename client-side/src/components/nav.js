@@ -13,7 +13,9 @@ const Nav = () => {
           <Dropdown.Menu>
             <Dropdown.Item href="#/action-1">Preferences</Dropdown.Item>
             <Dropdown.Item href="#/action-2">Filters</Dropdown.Item>
-            <Dropdown.Item href="#/action-3">Statistic</Dropdown.Item>
+            <Dropdown.Item href="#/action-3">Statistics</Dropdown.Item>
+            <Dropdown.Item href="">Bookmarks</Dropdown.Item>
+
           </Dropdown.Menu>
         </Dropdown>
         <img src="/X.png" />
