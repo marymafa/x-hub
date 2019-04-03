@@ -23,6 +23,7 @@ const videos = (app, client) => {
         res.json(videos.rows)
     })
     app.post("/video/comment", (req, res) => {
+        
         res.json({ title: "req.params", comments: [{ text: req.body.comment, date: "now" }, { text: "I love this video", date: "2019-04-02" }, { text: "ohhhh amazing stuff guys", date: "2019-01-04" }, { text: "Amazing", date: "2019-02-22" }] }).status(200).end();
     })
     app.get("/video/likes/:title", (req, res) => {
