@@ -5,6 +5,7 @@ import Axios from "axios";
 const Feeds = props => {
   const [show, setShow] = useState(false);
   const [showComments, viewComment] = useState(false);
+  const [showSearch, search] = useState(false);
 
   useEffect(() => {
     Axios
@@ -85,7 +86,7 @@ const Feeds = props => {
             <i class="icon far fa-comments" onClick={() => viewComment(true)} />
           </div>
           <div className="iconBackground">
-            <i class=" icon fas fa-sync-alt" />
+            <i class=" icon fas fa-sync-alt" onClick={()=> search(true)}/>
           </div>
           <div className="iconBackground">
             <i class="icon far fa-thumbs-up" />
@@ -98,7 +99,7 @@ const Feeds = props => {
         </Modal.Footer>
       </Modal>
 
-      <Modal
+     ` <Modal
         show={showComments}
         onHide={() => viewComment(false)}
         dialogClassName="modal-90w"
@@ -129,6 +130,27 @@ const Feeds = props => {
           <Button variant="primary"> comment</Button> */}
         </Modal.Footer>
       </Modal>
+
+      <Modal
+        show={showSearch}
+        onHide={() => search(false)}
+        dialogClassName="modal-90w"
+        aria-labelledby="example-custom-modal-styling-title"
+      >
+        <Modal.Header closeButton>
+          <Modal.Title id="example-custom-modal-styling-title">
+            search
+          </Modal.Title>
+        </Modal.Header>
+        <Modal.Body>
+          <input placeholder="search " type="text"/>
+        </Modal.Body>
+        <Modal.Footer>
+          {/* <Button variant="secondary">filter</Button>
+          <Button variant="primary"> comment</Button> */}
+        </Modal.Footer>
+      </Modal>
+
     </div>
   );
 };

@@ -1,7 +1,7 @@
-import React from "react";
+import React,{Component} from "react";
 import axios from 'axios';
 
-class ShareContent extends React.Component{
+class ShareContent extends Component{
     constructor(props){
         super(props);
         this.state={
@@ -9,15 +9,12 @@ class ShareContent extends React.Component{
         }
     }
 
-     componentDidMount(){
-         axios.get('https://localhost:3001/articles')
-        .then(res => {
+    async componentDidMount(){
+    var test = await axios.get('http://localhost:3002/article').then(res => {
           const articles = res.data;
           this.setState({ articles });
         })
-        console.log("article", this.articles )
-        console.log("hello react")
-
+      
     }
 
     render(){

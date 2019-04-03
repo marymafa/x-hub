@@ -1,7 +1,7 @@
 var app = require("express")();
 var http = require("http").Server(app);
 var io = require("socket.io")(http);
-var port = process.env.PORT || 3001
+var port = process.env.PORT || 3002
 var express = require("express")
 
 var { articles } = require("./routes/articles");
@@ -12,13 +12,14 @@ var cors = require("cors");
 var path = require("path");
 
 const { Pool, Client } = require('pg')
-const connectionString = 'postgresql://cindy:loppar123@localhost:5432/x_hub'
+const connectionString = 'postgresql://postgres:TCGPC1@localhost:5432/x_hub'
 
 app.use(cors());
 
 app.use(bodyParser());
+
 app.use(bodyParser.json({ limit: '50mb' }));
-app.use(bodyParser.urlencoded({ limit: '50mb', extended: true }));
+app.use(bodyParser.urlencoded({ limit: '50mb', extended: false }));
 
 
 app.post("/article/like", (req, res) => {
@@ -28,6 +29,7 @@ app.post("/video/like", (req, res) => {
     res.send("like successfull!").status(200).end();
 const pool = new Pool({
     connectionString: connectionString,
+})
 })
 const client = new Client({
     connectionString: connectionString,
@@ -70,5 +72,5 @@ io.on('connection', function (socket) {
 
 http.listen(port, function () {
 
-    console.log('listening on *:' + 3001)
+    console.log('listening on *:' + 3000)
  });
