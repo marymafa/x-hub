@@ -22,11 +22,7 @@ class Video extends Component {
               width={100 + "%"}
               height={30 + "%"}
               url={this.props.url}
-<<<<<<< HEAD
-              // playing
-=======
               //playing
->>>>>>> b01159546a39b25e7f689c484741323125f586f4
             />
           </center>
         </Modal.Body>
