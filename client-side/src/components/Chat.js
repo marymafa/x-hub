@@ -4,8 +4,12 @@ import {
   ChatWrapper,
   ChatContainer,
   UsersWrapper,
-  Send
+  Send,
+  SendSection
 } from "../components/chat-styles";
+
+import BottomNav from "./bottom-nav";
+import Nav from "./nav";
 
 const Chat = () => {
   const [chats, addChats] = useState([{ input: "" }]);
@@ -31,19 +35,23 @@ const Chat = () => {
 
   return (
     <div>
+      <Nav />
       <ChatContainer>
-        <UsersWrapper />
-        users
+        <UsersWrapper>users</UsersWrapper>
         <ChatWrapper>
-          <input type="text" onChange={e => addInput(e.target.value)} />
-          <Send onClick={() => call()}> Send </Send>
           <h1>
             {chats.map(chat => (
               <li> {chat.input} </li>
             ))}
           </h1>
+
+          <SendSection className="send">
+          <input type="text" onChange={e => addInput(e.target.value)} />
+          <Send onClick={() => call()}> Send </Send>
+          </SendSection>
         </ChatWrapper>
       </ChatContainer>
+      <BottomNav />
     </div>
   );
 };
