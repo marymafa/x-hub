@@ -20,9 +20,9 @@ class Video extends Component {
           <center className={"container-size container"}>
             <ReactPlayer
               width={100 + "%"}
-              height={40 + "%"}
+              height={30 + "%"}
               url={this.props.url}
-              playing
+              //playing
             />
           </center>
         </Modal.Body>
