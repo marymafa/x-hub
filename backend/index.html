@@ -23,10 +23,10 @@
 
     <script>
         function submit() {
-            fetch('http://localhost:3000/users', {
-                method: 'get',
-                // body: JSON.stringify({ name: 'sabelo' }),
-                // headers: { 'Content-type': 'application/json' }
+            fetch('http://localhost:3000/article/comment', {
+                method: 'post',
+                body: JSON.stringify({ comment: 'Is that why osep is just not so great', user: "sabelo", title: "osep" }),
+                headers: { 'Content-type': 'application/json' }
             }).then(function (response) {
                 return response.json();
             }).then(function (myJson) {
