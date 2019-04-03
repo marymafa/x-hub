@@ -9,6 +9,7 @@ const DashContainer = styled.div`
 const Feed = styled.div`
   height: 33.6rem;
   background: #f4f3ef;
+  max-width:100%
   margin-top: 3rem;
 `;
 
@@ -22,6 +23,7 @@ width: -moz-available;
 height: -moz-available;
 background: #26aaade0;
 grid-template-columns: repeat(4,1fr););
+bottom:0;
 
 }`;
 const Navigation = styled.div`
