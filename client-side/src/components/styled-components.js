@@ -45,9 +45,5 @@ const Icons = styled.i`
 const Input = styled.input`
   margin: auto;
 `;
-//colors
-//green: 26aaad
-// yellow fe9b3a
-//grey : f4f3ef
 
 export { DashContainer, Feed, BtmNav, Navigation, Icons, Input };
