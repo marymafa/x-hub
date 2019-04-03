@@ -1,9 +1,3 @@
-<<<<<<< HEAD
-import Style from "styled-components";
-import Dashboard from "./dashboard";
-
-const DashContainer = styled.div``;
-=======
 import styled from "styled-components";
 
 const DashContainer = styled.div`
@@ -57,4 +51,3 @@ const Input = styled.input`
 //grey : f4f3ef
 
 export { DashContainer, Feed, BtmNav, Navigation, Icons, Input };
->>>>>>> 4e2f55b72c7607bc72c11e2a4c7261d61e96776d

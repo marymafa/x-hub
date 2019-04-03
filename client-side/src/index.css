@@ -3,32 +3,6 @@ body {
   padding: 0;
   font-family: sans-serif;
 }
-<<<<<<< HEAD
-
-h1{
-  margin-left:26% ; 
-}
-textarea { 
-width: 300px;
-height: 700px;
-padding-left: 60%;
-border-radius: 25px;
-margin-left:20% ;
-box-sizing: border-box;
-background-position: left top;
-background-repeat: repeat;
- }
-
- .chat-room{
-  justify-content: center;	
-}
-
-
-
-
-
-
-=======
 i {
   font-size: 2rem;
   margin: auto;
@@ -110,4 +84,3 @@ btn-success:not(:disabled):not(.disabled).active:focus,
 /* .modal-title {
   background: url(https://images.unsplash.com/photo-1553991499-7dc579547f16?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=400&q=60);
 } */
->>>>>>> 4e2f55b72c7607bc72c11e2a4c7261d61e96776d
