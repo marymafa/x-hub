@@ -2,6 +2,7 @@ import React, { useState, useEffect } from "react";
 import { Modal, Button } from "react-bootstrap";
 import Axios from "axios";
 import ViewComments from "./view-comments";
+import FlagPost from "./flag-post";
 
 const Feeds = props => {
   const [show, setShow] = useState(false);
@@ -10,13 +11,23 @@ const Feeds = props => {
 
   useEffect(() => {
     Axios.get("localhost:3001/article/likes/")
-      .then(function(response) {
+      .then(function (response) {
         console.log(response);
       })
-      .catch(function(error) {
+      .catch(function (error) {
         console.log(error);
       });
   });
+  function pushToStorage(username, comment, article) {
+    var date = new Date();
+    // var dd = today.getDate();
+    var store = [];
+    var value = store.push({ "user": username, "comment": comment, "date":date });
+
+    localStorage.setItem("comment", JSON.stringify(value))
+
+    return { article: article, comments: value }
+  }
 
   return (
     <div>
@@ -117,6 +128,8 @@ const Feeds = props => {
             <i className="icon far fa-thumbs-up" />
           </div>
           <div className="iconBackground">
+            <i className=" icon fab fa-font-awesome-flag"><button onClick={()=>{return <FlagPost/>}}></button></i>/>
+          </div>
             <i className=" icon fab fa-font-awesome-flag" />
           </div> */}
           {/* <Button variant="secondary">filter</Button>
