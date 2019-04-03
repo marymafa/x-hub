@@ -7,11 +7,6 @@ const BottomNav = () => {
   return (
     <React.Fragment>
       <BtmNav>
-      {/* <li>
-            <a href="">
-              <Link to="/registerbusiness">Register business</Link>
-            </a>
-          </li> */}
 
         <i class="far fa-comment" />
         <i class="fas fa-upload" />
