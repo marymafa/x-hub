@@ -44,6 +44,12 @@ const articles = (app, client) => {
     res.json(articles.rows)
   })
 
+  app.get("/articles", async (req, res) => {
+    var articles = await client.query('SELECT * FROM articles;');
+    console.log("articles", articles)
+    res.json(articles.rows)
+  })
+
   app.set('view engine', 'html');
   app.get("/", (req, res) => {
     res.send("hello world");
