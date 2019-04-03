@@ -1,10 +1,21 @@
 import React, { useState, useEffect } from "react";
 import { Modal, Button } from "react-bootstrap";
+import Axios from "axios";
 
 const Feeds = props => {
   const [show, setShow] = useState(false);
   const [showComments, viewComment] = useState(false);
 
+  useEffect(() => {
+    Axios
+      .get("localhost:3001/article/likes/")
+      .then(function(response) {
+        console.log(response);
+      })
+      .catch(function(error) {
+        console.log(error);
+      });
+  });
   //   const handleHide = () => {
   //     setShow(true);
   //   };
