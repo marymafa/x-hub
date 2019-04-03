@@ -2,6 +2,7 @@ import React, { useState, useEffect } from "react";
 import { Modal, Button } from "react-bootstrap";
 import Axios from "axios";
 import ViewComments from "./view-comments";
+import FlagPost from "./flag-post";
 
 const Feeds = props => {
   const [show, setShow] = useState(false);
@@ -120,7 +121,7 @@ const Feeds = props => {
             <i className="icon far fa-thumbs-up" />
           </div>
           <div className="iconBackground">
-            <i className=" icon fab fa-font-awesome-flag" />
+            <i className=" icon fab fa-font-awesome-flag"><button onClick={()=>{return <FlagPost/>}}></button></i>/>
           </div>
           {/* <Button variant="secondary">filter</Button>
           <Button variant="primary"> comment</Button> */}
