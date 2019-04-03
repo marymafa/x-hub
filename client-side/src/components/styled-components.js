@@ -8,9 +8,10 @@ const DashContainer = styled.div`
 `;
 const Feed = styled.div`
   height: 33.6rem;
-  background: #f4f3ef;
-  max-width:100%
+  background: #3d3d3d;
+  max-width: 100%;
   margin-top: 3rem;
+  height: 100%;
 `;
 
 const BtmNav = styled.div`    
@@ -21,7 +22,7 @@ z-index: 1;
 width: -webkit-fill-available;
 width: -moz-available;
 height: -moz-available;
-background: #26aaade0;
+background: #000000db;
 grid-template-columns: repeat(4,1fr););
 bottom:0;
 
@@ -34,7 +35,7 @@ const Navigation = styled.div`
   width: -webkit-fill-available;
   width: -moz-available;
   position: fixed;
-  background: #26aaade0;
+  background: #000000db;
   grid-template-columns: repeat(3, 1fr);
   -webkit-box-pack: start;
   -webkit-justify-content: start;

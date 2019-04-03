@@ -69,15 +69,13 @@ const Feeds = props => {
             less sleep than they need on an average night, and 80% say they are
             using weekend days to make up for sleep lost during the week.
           </p>
-
-         
         </Modal.Body>
         <Modal.Footer>
           <div className="iconBackground">
             <i class="icon far fa-comments" onClick={() => viewComment(true)} />
           </div>
           <div className="iconBackground">
-            <i class=" icon fas fa-sync-alt" />
+            <i class="icon fas fa-share-alt" />
           </div>
           <div className="iconBackground">
             <i class="icon far fa-thumbs-up" />
@@ -86,11 +84,13 @@ const Feeds = props => {
             <i class=" icon fab fa-font-awesome-flag" />
           </div>
           <div className="iconBackground">
-            <i class=" icon far fa-bookmark"  onClick={()=> alertBookmarks(true)}/>
+            <i
+              class=" icon far fa-bookmark"
+              onClick={() => alertBookmarks(true)}
+            />
           </div>
- 
         </Modal.Footer>
-        <ViewComments postedComments={props.comments}/>
+        <ViewComments postedComments={props.comments} />
       </Modal>
 
       <Modal
@@ -109,12 +109,9 @@ const Feeds = props => {
         </Modal.Body>
         <Modal.Footer>
           <div className="iconBackground">
-            <i
-              className="icon far fa-comments"
-              onClick={() => viewComment(true)}
-            />
+            <i className="icon far fa-send" onClick={() => viewComment(true)} />
           </div>
-          <div className="iconBackground">
+          {/* <div className="iconBackground">
             <i className=" icon fas fa-sync-alt" />
           </div>
           <div className="iconBackground">
@@ -123,10 +120,11 @@ const Feeds = props => {
           <div className="iconBackground">
             <i className=" icon fab fa-font-awesome-flag"><button onClick={()=>{return <FlagPost/>}}></button></i>/>
           </div>
+            <i className=" icon fab fa-font-awesome-flag" />
+          </div> */}
           {/* <Button variant="secondary">filter</Button>
           <Button variant="primary"> comment</Button> */}
         </Modal.Footer>
-
       </Modal>
 
       <Modal
@@ -144,12 +142,10 @@ const Feeds = props => {
           <p>Bookmarked</p>
         </Modal.Body>
         <Modal.Footer>
-          
           {/* <Button variant="secondary">filter</Button>
           <Button variant="primary"> comment</Button> */}
         </Modal.Footer>
       </Modal>
-
     </div>
   );
 };
