@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from "react";
+import Upload from "./upload";
 import { DashContainer, BtmNav } from "./styled-components";
 import Nav from "./nav";
 import Feeds from "./feed";
