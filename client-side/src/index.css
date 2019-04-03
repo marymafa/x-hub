@@ -118,3 +118,11 @@ btn-success:not(:disabled):not(.disabled).active:focus,
   color: white;
   margin: -1rem -1rem -1rem auto;
 }
+.input {
+  height: 100%;
+  width: 100%;
+}
+.commentsSection {
+  display: grid;
+  grid-template-columns: repeat(1, 1fr);
+}
