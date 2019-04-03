@@ -4,46 +4,48 @@ import {
   ChatWrapper,
   ChatContainer,
   UsersWrapper,
-  Send
+  Send,
+  SendSection,
+  Bubble
 } from "../components/chat-styles";
+
+import BottomNav from "./bottom-nav";
+import Nav from "./nav";
 
 const Chat = () => {
   const [chats, addChats] = useState([{ input: "" }]);
   const [input, addInput] = useState("");
   function call() {
-    const name = "user";
-
     socket.emit("chat message", { input });
-    getFeed();
   }
+
   const socket = openSocket("http://localhost:3000");
 
-  useEffect(() => {
-    getFeed();
-  });
+  useEffect(() => {});
 
-  function getFeed() {
-    socket.on("chat message", function(msg) {
-      addChats(msg);
-      return msg;
-    });
-  }
+  socket.on("chat message", function(msg) {
+    addChats(msg);
+    return msg;
+  });
 
   return (
     <div>
       <ChatContainer>
-        <UsersWrapper />
-        users
+        <UsersWrapper>users</UsersWrapper>
         <ChatWrapper>
-          <input type="text" onChange={e => addInput(e.target.value)} />
-          <Send onClick={() => call()}> Send </Send>
-          <h1>
+          <Bubble>
             {chats.map(chat => (
-              <li> {chat.input} </li>
+              <p> {chat.input} </p>
             ))}
-          </h1>
+          </Bubble>
+
+          <SendSection className="send">
+            <input type="text" onChange={e => addInput(e.target.value)} />
+            <Send onClick={() => call()}> Send </Send>
+          </SendSection>
         </ChatWrapper>
       </ChatContainer>
+      <BottomNav />
     </div>
   );
 };
