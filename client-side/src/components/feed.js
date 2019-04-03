@@ -7,8 +7,7 @@ const Feeds = props => {
   const [showComments, viewComment] = useState(false);
 
   useEffect(() => {
-    Axios
-      .get("localhost:3001/article/likes/")
+    Axios.get("localhost:3001/article/likes/")
       .then(function(response) {
         console.log(response);
       })
@@ -93,6 +92,9 @@ const Feeds = props => {
           <div className="iconBackground">
             <i class=" icon fab fa-font-awesome-flag" />
           </div>
+          <div className="iconBackground">
+            <i class="icon far fa-book" />
+          </div>
           {/* <Button variant="secondary">filter</Button>
           <Button variant="primary"> comment</Button> */}
         </Modal.Footer>
@@ -114,7 +116,7 @@ const Feeds = props => {
         </Modal.Body>
         <Modal.Footer>
           <div className="iconBackground">
-            <i class="icon far fa-comments" />
+            <i class="icon far fa-comments" onClick={() => viewComment(true)} />
           </div>
           <div className="iconBackground">
             <i class=" icon fas fa-sync-alt" />
