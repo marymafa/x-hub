@@ -28,6 +28,11 @@ const Dashboard = () => {
       <DashContainer>
         <Nav />
         <Feed>
+          {/* {(function() {
+            // body of the function
+            var list = [];
+          })()} */}
+
           {articles.map(x => (
             <Feeds comments={x} />
           ))}

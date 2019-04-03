@@ -13,10 +13,12 @@ const Nav = () => {
           <Dropdown.Menu>
             <Dropdown.Item href="#/action-1">Preferences</Dropdown.Item>
             <Dropdown.Item href="#/action-2">Filters</Dropdown.Item>
-            <Dropdown.Item href="#/action-3">Statistic</Dropdown.Item>
+            <Dropdown.Item href="#/action-3">Statistics</Dropdown.Item>
+            <Dropdown.Item href="">Bookmarks</Dropdown.Item>
+
           </Dropdown.Menu>
         </Dropdown>
-        <img src="/X.png" />
+        <img src="https://github.com/moralss/x-hub/blob/master/client-side/src/components/X.png?raw=true" />
         <Input placeholder="search" />
       </Navigation>
     </React.Fragment>
