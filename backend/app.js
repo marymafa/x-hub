@@ -11,7 +11,7 @@ var cors = require("cors");
 var path = require("path");
 
 const { Pool, Client } = require("pg");
-const connectionString = "postgres://postgres:Moral007@localhost:5432/x_hub";
+const connectionString = "postgres://postgres:mercy@localhost:5432/x_hub";
 
 app.use(cors());
 
