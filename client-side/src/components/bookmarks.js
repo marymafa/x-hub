@@ -2,18 +2,17 @@ import React, { useState, useEffect } from "react";
 import { Modal, Button } from "react-bootstrap";
 import Axios from "axios";
 
-const Feeds = props => {
+const Bookmarks = props => {
   const [show, setShow] = useState(false);
   const [showComments, viewComment] = useState(false);
-  const [showBookmarks, alertBookmarks] = useState(false);
 
-  useEffect(() => {
+  getData(() => {
     Axios
-      .get("localhost:3001/article/likes/")
-      .then(function(response) {
+      .get("localhost:3001/bookmark")
+      .then(function (response) {
         console.log(response);
       })
-      .catch(function(error) {
+      .catch(function (error) {
         console.log(error);
       });
   });
@@ -36,6 +35,7 @@ const Feeds = props => {
         </Modal.Body>
       </Modal.Dialog>
 
+     
       <Modal
         show={show}
         onHide={() => setShow(false)}
@@ -87,9 +87,10 @@ const Feeds = props => {
             <i class=" icon fab fa-font-awesome-flag" />
           </div>
           <div className="iconBackground">
-            <i class=" icon far fa-bookmark"  onClick={()=> alertBookmarks(true)}/>
+            <i class="icon far fa-bookmark" onClick/>         
           </div>
- 
+          {/* <Button variant="secondary">filter</Button>
+          <Button variant="primary"> comment</Button> */}
         </Modal.Footer>
       </Modal>
 
@@ -120,33 +121,13 @@ const Feeds = props => {
           <div className="iconBackground">
             <i class=" icon fab fa-font-awesome-flag" />
           </div>
-          {/* <Button variant="secondary">filter</Button>
-          <Button variant="primary"> comment</Button> */}
-        </Modal.Footer>
-      </Modal>
-
-      <Modal
-        show={showBookmarks}
-        onHide={() => alertBookmarks(false)}
-        dialogClassName="modal-90w"
-        aria-labelledby="example-custom-modal-styling-title"
-      >
-        <Modal.Header closeButton>
-          {/* <Modal.Title id="example-custom-modal-styling-title">
-            Custom Modal Styling
-          </Modal.Title> */}
-        </Modal.Header>
-        <Modal.Body>
-          <p>Bookmarked</p>
-        </Modal.Body>
-        <Modal.Footer>
           
+
           {/* <Button variant="secondary">filter</Button>
           <Button variant="primary"> comment</Button> */}
         </Modal.Footer>
       </Modal>
-
     </div>
   );
 };
-export default Feeds;
+export default Bookmarks;
