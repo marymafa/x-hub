@@ -18,7 +18,7 @@ const Nav = () => {
 
           </Dropdown.Menu>
         </Dropdown>
-        <img src="/X.png" />
+        <img src="https://github.com/moralss/x-hub/blob/master/client-side/src/components/X.png?raw=true" />
         <Input placeholder="search" />
       </Navigation>
     </React.Fragment>
