@@ -67,7 +67,7 @@ btn-success:not(:disabled):not(.disabled).active:focus,
   border: none;
 }
 .dropdown-menu.show {
-  background: #5fc1c2;
+  background: #807d7c;
 }
 .articleImages {
   width: 10%;
@@ -89,10 +89,32 @@ btn-success:not(:disabled):not(.disabled).active:focus,
 }
 .modal-header {
 }
+.modal-title {
+  color: white;
+  font-weight: 300;
+  margin-bottom: 0;
+  margin-left: auto;
+  line-height: 4.5;
+  text-align: center;
+  font-size: 2rem;
+}
 
 .imgs {
-  background: url(https://source.unsplash.com/collection/190727/1600x900);
-  background-repeat: no-repeat;
+  background: linear-gradient(#12131578, #12131578, transparent),
+    url(https://source.unsplash.com/collection/190727/1600x900) no-repeat center;
   height: 9rem;
+  /* color: white; */
+}
+
+.btn-success:not(:disabled):not(.disabled).active,
+.btn-success:not(:disabled):not(.disabled):active,
+.show > .btn-success.dropdown-toggle {
+  color: #fff;
+  background-color: transparent;
+  border-color: transparent;
+}
+.modal-header .close {
+  padding: 1rem 1rem;
   color: white;
+  margin: -1rem -1rem -1rem auto;
 }
