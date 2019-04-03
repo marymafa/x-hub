@@ -8,6 +8,7 @@ const Feeds = props => {
   const [show, setShow] = useState(false);
   const [showComments, viewComment] = useState(false);
   const [showBookmarks, alertBookmarks] = useState(false);
+  const [comment, addComment] = useState("");
 
   useEffect(() => {
     Axios.get("localhost:3001/article/likes/")
@@ -110,18 +111,25 @@ const Feeds = props => {
         aria-labelledby="example-custom-modal-styling-title"
       >
         <Modal.Header closeButton>
-          <Modal.Title id="example-custom-modal-styling-title">
-            {/* Custom Modal Styling */}
-          </Modal.Title>
+          <Modal.Title id="example-custom-modal-styling-title" />
         </Modal.Header>
         <Modal.Body>
-          <input placeholder="add comment" type="text" />
-        </Modal.Body>
-        <Modal.Footer>
-          <div className="iconBackground">
-            <i className="icon far fa-send" onClick={() => viewComment(true)} />
+          <div className="commentsSection">
+            <label>Comment</label>
+            <input
+              placeholder=" Add comment here"
+              onChange={e => addComment(e.target.value)}
+              type="text"
+            />
           </div>
-          {/* <div className="iconBackground">
+          <div className="iconBackground">
+            <i
+              className="icon fas fa-chevron-right"
+              onClick={() => viewComment(true)}
+            />
+          </div>
+        </Modal.Body>
+        {/* <div className="iconBackground">
             <i className=" icon fas fa-sync-alt" />
           </div>
           <div className="iconBackground">
@@ -132,9 +140,8 @@ const Feeds = props => {
           </div>
             <i className=" icon fab fa-font-awesome-flag" />
           </div> */}
-          {/* <Button variant="secondary">filter</Button>
+        {/* <Button variant="secondary">filter</Button>
           <Button variant="primary"> comment</Button> */}
-        </Modal.Footer>
       </Modal>
 
       <Modal
