@@ -7,7 +7,9 @@ const Feeds = props => {
   const [show, setShow] = useState(false);
   const [showComments, viewComment] = useState(false);
   const [showSearch, search] = useState(false);
-  
+  const [showBookmarks] = useState(false);
+  const [alertBookmarks] = useState(false);
+
 
   useEffect(() => {
     Axios.get("localhost:3001/article/likes/")
