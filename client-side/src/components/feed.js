@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from "react";
 import { Modal, Button } from "react-bootstrap";
 import Axios from "axios";
+import ViewComments from "./view-comments";
 
 const Feeds = props => {
   const [show, setShow] = useState(false);
@@ -67,6 +68,8 @@ const Feeds = props => {
             less sleep than they need on an average night, and 80% say they are
             using weekend days to make up for sleep lost during the week.
           </p>
+
+         
         </Modal.Body>
         <Modal.Footer>
           <div className="iconBackground">
@@ -86,6 +89,7 @@ const Feeds = props => {
           </div>
  
         </Modal.Footer>
+        <ViewComments postedComments={props.comments}/>
       </Modal>
 
       <Modal
@@ -121,6 +125,7 @@ const Feeds = props => {
           {/* <Button variant="secondary">filter</Button>
           <Button variant="primary"> comment</Button> */}
         </Modal.Footer>
+
       </Modal>
 
       <Modal

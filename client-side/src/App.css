@@ -117,7 +117,7 @@
 .txt-area {
   width: 70%;
 }
-table {
-  margin-left: 5%;
-  margin-bottom: 2%;
+.table {
+ display: grid;
+ grid-template-rows: repeat(9,10%)
 }
