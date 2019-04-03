@@ -32,7 +32,8 @@ CREATE TABLE IF NOT EXISTS articles_likes(
     liked_articles_id INT REFERENCES users(id),
     liked_item INT REFERENCES articles(id),
     created_at timestamp NOT NULL DEFAULT NOW() NOT NULL,
-    updated_at timestamp NOT NULL DEFAULT NOW() NOT NULL
+    updated_at timestamp NOT NULL DEFAULT NOW() NOT NULL,
+    CONSTRAINT u_constraint UNIQUE ( liked_articles_id, liked_item)
 );
 CREATE TABLE IF NOT EXISTS tagged_article(
     id serial PRIMARY KEY,
@@ -89,8 +90,11 @@ CREATE TABLE IF NOT EXISTS tagged_video(
 
 
 
+
+
 INSERT INTO users(name) VALUES ('Mercy');
 INSERT INTO charts(messages) VALUES ('Hello, I go to experience codefest2019');
+
 
 
 
