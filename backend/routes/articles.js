@@ -50,6 +50,12 @@ const articles = (app, client) => {
     var results = await client.query('SELECT * FROM articles_likes WHERE liked_item = $1;', [articleInfo.rows[0].id]);
     res.json(results).status(200).end();
   });
+  
+    app.get("/article", async (req, res) => {
+      var articles = await client.query('SELECT * FROM articles');
+      res.json(articles.rows)
+      console.log("articles", articles)
+    })
   app.get("/article/comments/:title", async (req, res) => {
     var articleInfo = await client.query(`SELECT * FROM articles where title=$1;`, [req.params.title]);
     var articles = await client.query('SELECT * FROM articles_comments where commented_item =$1;', [articleInfo.rows[0].id]);
