@@ -4,7 +4,7 @@ CREATE TABLE IF NOT EXISTS users(
     created_at timestamp NOT NULL DEFAULT NOW() NOT NULL,
     updated_at timestamp NOT NULL DEFAULT NOW() NOT NULL
 );    
-CREATE TABLE IF NOT EXISTS charts(
+CREATE TABLE IF NOT EXISTS chats(
     id serial PRIMARY KEY,
     messages varchar(225) NOT NULL,
     sender_id  INT REFERENCES users(id),
@@ -16,6 +16,7 @@ CREATE TABLE IF NOT EXISTS articles(
     id serial PRIMARY KEY,
     title varchar(255) NOT NULL UNIQUE,
     user_id INT REFERENCES users(id) UNIQUE,
+    flag INT NOT NULL,
     created_at timestamp NOT NULL DEFAULT NOW() NOT NULL,
     updated_at timestamp NOT NULL DEFAULT NOW() NOT NULL
 );                                               
@@ -52,8 +53,8 @@ CREATE TABLE IF NOT EXISTS bookmark(
 CREATE TABLE IF NOT EXISTS videos(
     id serial PRIMARY KEY,
     title varchar(255) NOT NULL ,
-    comments varchar(225) NOT NULL UNIQUE,
     users_id INT REFERENCES users(id),
+    flags INT NOT NULL,
     created_at timestamp NOT NULL DEFAULT NOW() NOT NULL,
     updated_at timestamp NOT NULL DEFAULT NOW() NOT NULL
 );                                                                                                                                                                                                                                                                                                           
@@ -92,8 +93,6 @@ CREATE TABLE IF NOT EXISTS tagged_video(
 
 
 
-INSERT INTO users(name) VALUES ('Mercy');
-INSERT INTO charts(messages) VALUES ('Hello, I go to experience codefest2019');
 
 
 
