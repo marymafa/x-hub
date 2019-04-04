@@ -33,6 +33,10 @@ export const Bubble = styled.div`
     width: 20rem;
     text-align: center;
     padding: 0.5rem;
+    
+      li{
+        list-style:none;
+      }
   }
 `;
 
