@@ -32,14 +32,8 @@ app.post("/video/like", (req, res) => {
         .end();
 });
 const pool = new Pool({
-<<<<<<< HEAD
-    connectionString: connectionString,
-})
-
-=======
     connectionString: connectionString
 });
->>>>>>> 33eaf84b579558529a7ee965243699e1140bcf67
 const client = new Client({
     connectionString: connectionString
 });
