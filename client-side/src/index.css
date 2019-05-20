@@ -87,8 +87,8 @@ btn-success:not(:disabled):not(.disabled).active:focus,
     margin: 1.75rem auto;
   }
 }
-.modal-header {
-}
+/* .modal-header {
+} */
 .modal-title {
   color: white;
   font-weight: 300;
